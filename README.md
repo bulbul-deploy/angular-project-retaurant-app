@@ -6,16 +6,54 @@ Install JSON Server
 
 npm install -g json-server
 Create a db.json file with some data
-
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "retaurants": [
+    {
+      "id": 1,
+      "name": "KFC retaurants",
+      "address": "Walton,Dhaka",
+      "email": "walton@walton.com"
+    },
+    {
+      "id": 2,
+      "name": "Walton retaurants",
+      "address": "Gazipur,Dhaka",
+      "email": "bd@test.com"
+    },
+    {
+      "name": "Test Fastfood",
+      "address": "Test,Dhaka",
+      "email": "test@test.com",
+      "id": 3
+    },
+    {
+      "name": "WALTON",
+      "email": "walton@gmail.com",
+      "address": "Dhaka",
+      "id": 4
+    },
+    {
+      "name": "TFC",
+      "email": "walton@gmail.com",
+      "address": "Dhaka",
+      "id": 5
+    },
+    {
+      "name": "Tangail Fast Food",
+      "email": "tfc@gmail.com",
+      "address": "Tangail",
+      "id": 6
+    },
+    {
+      "name": "Natural Food",
+      "email": "natural@test.com",
+      "address": "natural,Dhaka",
+      "id": 7
+    }
+  ]
 }
+
+
 Start JSON Server
 
 json-server --watch db.json
