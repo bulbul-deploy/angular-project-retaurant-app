@@ -5,7 +5,7 @@ Getting started
 Install JSON Server
 
 npm install -g json-server
-Create a db.json file with some data
+Create a db.json file with some data </br>
 {
   "retaurants": [
     {
