@@ -2,7 +2,7 @@
 <div *ngIf="alert" class="alert alert-success" role="alert">
     Success! Data Updated Succesfully 
   </div>
-<form [formGroup]="editResto" (ngSubmit)="collection()">
+<form [formGroup]="editResto" (ngSubmit)="edit()">
     <div class="mb-3">
       <label>Name</label>
       <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">

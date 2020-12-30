@@ -2,7 +2,7 @@
 <div *ngIf="alert" class="alert alert-success" role="alert">
     Success! Data Inserted Succesfully 
   </div>
-<form [formGroup]="addResto" (ngSubmit)="collectResto()">
+<form [formGroup]="addResto" (ngSubmit)="createResto()">
     <div class="mb-3">
       <label>Name</label>
       <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">

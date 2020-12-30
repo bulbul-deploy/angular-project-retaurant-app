@@ -11,26 +11,24 @@ export class RestoService {
 
   constructor(private http:HttpClient) { }
 
-  getList(){
-    return this.http.get(this.url);
+  getList(): Observable<Resto[]>{
+    return this.http.get<Resto[]>(`${this.url}`);
   }
   
-  saveResto(data: any){
-    //console.warn("service",data);
-    return this.http.post(this.url,data);
-  }
-  deleteResto(id: any){
-
-    return this.http.delete(`${this.url}/${id}`);
-    
-  }
-  getCurrentResto(id:any){
-    return this.http.get(`${this.url}/${id}`);
+  saveResto(resto: Resto): Observable<Object>{
+    return this.http.post(`${this.url}`, resto);
   }
   getCurrentRestoId(id: number): Observable<Resto>{
     return this.http.get<Resto>(`${this.url}/${id}`);
   }
-  updateResto(id:any,data:any){
-    return this.http.put(`${this.url}/${id}`,data)
+
+  updateResto(id: number, resto: Resto): Observable<Object>{
+    return this.http.put(`${this.url}/${id}`, resto);
   }
+
+  deleteResto(id: number): Observable<Object>{
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+
 }

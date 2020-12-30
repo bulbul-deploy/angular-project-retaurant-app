@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms'
 import { RestoService } from '../resto.service';
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'app-add-resto',
@@ -16,18 +17,24 @@ export class AddRestoComponent implements OnInit {
     address:new FormControl(''),
   })
 
-  constructor(private resto:RestoService) { }
+  constructor(private resto:RestoService,private router:Router) { }
 
   ngOnInit(): void {
   }
-  collectResto(){
+  createResto(){
    // console.warn(this.addResto.value);
    this.resto.saveResto(this.addResto.value).subscribe((result)=>{
     // console.warn("result is ",result);
+    // this.goToRestoList();
     this.alert=true;
     this.addResto.reset({});
+
    })
+   
   
   }
+  // goToRestoList(){
+  //   this.router.navigate(['/list']);
+  // }
 
 }
