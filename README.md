@@ -88,3 +88,30 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+</br>
+<h2>My Service Code <h2>
+  getList(): Observable<Resto[]>{
+    return this.http.get<Resto[]>(`${this.url}`);
+  }
+  
+  saveResto(resto: Resto): Observable<Object>{
+    return this.http.post(`${this.url}`, resto);
+  }
+  getCurrentRestoId(id: number): Observable<Resto>{
+    return this.http.get<Resto>(`${this.url}/${id}`);
+  }
+
+  updateResto(id: number, resto: Resto): Observable<Object>{
+    return this.http.put(`${this.url}/${id}`, resto);
+  }
+
+  deleteResto(id: number): Observable<Object>{
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+
+ deleteResto(id: any){
+
+    return this.http.delete(`${this.url}/${id}`);
+    
+  }
